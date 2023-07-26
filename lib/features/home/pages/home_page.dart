@@ -137,7 +137,9 @@ class _ListViewItem extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Text((itemModel.relaseDate.toString())),
+                        Text(
+                          itemModel.relaseDate.toString(),
+                        ),
                       ],
                     ),
                   ),
@@ -148,8 +150,8 @@ class _ListViewItem extends StatelessWidget {
                   ),
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       Text(
                         '0',
                         style: TextStyle(
