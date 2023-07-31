@@ -19,6 +19,19 @@ class ItemsRepository {
     });
   }
 
+  Future<ItemModel> get({required String documentID}) async {
+    final doc = await FirebaseFirestore.instance
+        .collection('items')
+        .doc(documentID)
+        .get();
+    return ItemModel(
+      id: doc.id,
+      title: doc['title'],
+      imageURL: doc['image_url'],
+      relaseDate: (doc['release_date'] as Timestamp).toDate(),
+    );
+  }
+
   Future<void> remove({required String documentID}) {
     {
       return FirebaseFirestore.instance
